@@ -37,9 +37,9 @@ def Train(directory_train,directory_val,directory_test):
       running_loss += loss.item()
 
     print(f'Epoch [{epoch+1}/{epochs}], Loss: {running_loss/len(dataloader_train):.4f}')
-  return [dataloader_val, dataloader_test] 
+  return [model, dataloader_val, dataloader_test] 
 
-def evaluate_model(loader):
+def evaluate_model(model, loader):
     model.eval()
     total, correct = 0, 0
     with torch.no_grad():
@@ -49,7 +49,6 @@ def evaluate_model(loader):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
     return correct / total
-
 
 
 
