@@ -7,6 +7,8 @@ import torchvision.transforms as transforms
 from torchvision.datasets import ImageFolder
 from model import MyDataSet, CNN_FF
 
+
+
 def Train(directory_train,directory_val,directory_test): 
   transform = transforms.Compose([transforms.Resize((128, 128)),  transforms.ToTensor()])
   dataset_train = MyDataSet(directory_train, transform=transform)
