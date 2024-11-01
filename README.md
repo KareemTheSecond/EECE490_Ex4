@@ -6,6 +6,8 @@ Dataset: https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassifica
 - train
 - test
 - valid
+Please prepare the path names of the three downloaded folders above
+
 
 Each folder has 53 subfolders for each type of card, Joker included.
 - Ace of Spades
