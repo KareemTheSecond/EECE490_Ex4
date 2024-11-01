@@ -6,16 +6,11 @@ import torchvision.transforms as transforms
 directory_train = r"TRAIN_FOLDER_PATH"
 directory_val = r"VALIDATION_FOLDER_PATH"
 directory_test = r"TEST_FOLDER_PATH"
-transform = transforms.Compose([transforms.Resize((128, 128)), transforms.ToTensor()])
-
-dataset_train = MyDataSet(directory_train, transform=transform)
-dataset_val = MyDataSet(directory_val, transform=transform)
-dataset_test = MyDataSet(directory_test, transform=transform)
 
 model = CNN_FF()  
-Train(directory_train, directory_val, directory_test) 
-val_accuracy = evaluate_model(DataLoader(dataset_val, batch_size=32, shuffle=False))
+[dataloader_val, dataloader_test]  = Train(directory_train, directory_val, directory_test) 
+val_accuracy = evaluate_model(dataloader_val)
 print(f'Validation Accuracy: {val_accuracy * 100:.2f}%')
 
-test_accuracy = evaluate_model(DataLoader(dataset_test, batch_size=32, shuffle=False))
+test_accuracy = evaluate_model(dataloader_test)
 print(f'Test Accuracy: {test_accuracy * 100:.2f}%')
