@@ -17,7 +17,7 @@ class MyDataSet(Dataset):
     def __len__(self):
         return len(self.data)
 
-class NetClassifier(nn.Module): 
+class CNN_FF(nn.Module): 
     def __init__(self): 
         super().__init__() 
         self.conv1 = nn.Conv2d(3, 6, 5) # 3 * 128 * 128 => conv1 :6 * 124 * 124 => pool: 6 * 62 * 62 => conv2: 16*58*58 => pool2: 16*29*29 
