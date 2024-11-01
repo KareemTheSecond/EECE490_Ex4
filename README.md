@@ -15,7 +15,8 @@ Each folder has 53 subfolders for each type of card, Joker included.
 - Three of Spades
 ...
 
-### Models Made
-We have two models:
-- One uses CNN and then two normal feed-forward layers
-- The other just uses feed-forward layers
+### Model Made
+
+- The model uses CNN and then two normal feed-forward layers. When evaluated using the validation and test set, it returns around a 72% score. 
+
+
