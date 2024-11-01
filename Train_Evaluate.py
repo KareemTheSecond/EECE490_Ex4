@@ -5,11 +5,11 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, Dataset
 import torchvision.transforms as transforms
 from torchvision.datasets import ImageFolder
-from model import MyDataSet, CNN_FF
+from Models import MyDataSet, CNN_FF
 
 
 
-def Train(directory_train,directory_val,directory_test): 
+def Train_CNN_FF(directory_train,directory_val,directory_test): 
   transform = transforms.Compose([transforms.Resize((128, 128)),  transforms.ToTensor()])
   dataset_train = MyDataSet(directory_train, transform=transform)
   dataloader_train = DataLoader(dataset_train, batch_size=32, shuffle=True)
@@ -49,11 +49,5 @@ def evaluate_model(model, loader):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
     return correct / total
-
-
-
-
-
-
 
 
