@@ -7,10 +7,9 @@ directory_train = r"TRAIN_FOLDER_PATH"
 directory_val = r"VALIDATION_FOLDER_PATH"
 directory_test = r"TEST_FOLDER_PATH"
 
-model = CNN_FF()  
-[dataloader_val, dataloader_test]  = Train(directory_train, directory_val, directory_test) 
-val_accuracy = evaluate_model(dataloader_val)
+model, dataloader_val, dataloader_test  = Train(directory_train, directory_val, directory_test) 
+val_accuracy = evaluate_model(model, dataloader_val)
 print(f'Validation Accuracy: {val_accuracy * 100:.2f}%')
 
-test_accuracy = evaluate_model(dataloader_test)
+test_accuracy = evaluate_model(model, dataloader_test)
 print(f'Test Accuracy: {test_accuracy * 100:.2f}%')
